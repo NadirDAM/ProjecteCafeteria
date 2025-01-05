@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/menjarsFragment">
+
+    <fragment
+        android:id="@+id/menjarsFragment"
+        android:name="com.example.projectecafeteria.MenjarsFragment"
+        android:label="fragment_menjars"
+        tools:layout="@layout/fragment_menjars" >
+        <action
+            android:id="@+id/action_menjarsFragment_to_begudesFragment"
+            app:destination="@id/begudesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/begudesFragment"
+        android:name="com.example.projectecafeteria.BegudesFragment"
+        android:label="fragment_begudes"
+        tools:layout="@layout/fragment_begudes" >
+        <action
+            android:id="@+id/action_begudesFragment_to_postresFragment"
+            app:destination="@id/postresFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/postresFragment"
+        android:name="com.example.projectecafeteria.PostresFragment"
+        android:label="fragment_postres"
+        tools:layout="@layout/fragment_postres" >
+        <action
+            android:id="@+id/action_postresFragment_to_pagamentFragment"
+            app:destination="@id/pagamentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagamentFragment"
+        android:name="com.example.projectecafeteria.PagamentFragment"
+        android:label="fragment_pagament"
+        tools:layout="@layout/fragment_pagament" />
+</navigation>

@@ -29,7 +29,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.outlinedButtonRegister.setOnClickListener {
             val response = viewModel.createUser(binding.editTextUser.text.toString(), binding.editTextPassword.text.toString())
             if (response.isEmpty()) {
-                startActivity(Intent(applicationContext, MainActivity::class.java))
+                startActivity(Intent(applicationContext, HomeActivity::class.java))
             }
             else {
                 binding.textViewMessage.text = response

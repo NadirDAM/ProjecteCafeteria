@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding.outlinedButtonLogin.setOnClickListener {
 
             if(viewModel.checkUser(binding.editTextUser.text.toString(), binding.editTextPassword.text.toString())) {
-                startActivity(Intent(applicationContext, RegisterActivity::class.java))
+                startActivity(Intent(applicationContext, HomeActivity::class.java))
             }
             else {
                 binding.textViewMessage.text = "Usuari o contrasenya incorrecte"

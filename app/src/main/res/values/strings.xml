@@ -5,4 +5,7 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="anar_a_login">Anar a Login</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="seg_ent">Següent</string>
 </resources>

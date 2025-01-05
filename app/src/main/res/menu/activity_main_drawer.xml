@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menjarsFragment"
+            android:icon="@drawable/menjars"
+            android:title="Menjars" />
+        <item
+            android:id="@+id/begudesFragment"
+            android:icon="@drawable/beguda"
+            android:title="Beguda" />
+
+        <item
+            android:id="@+id/postresFragment"
+            android:icon="@drawable/postres"
+            android:title="Postres" />
+        <item
+            android:id="@+id/pagamentFragment"
+            android:icon="@drawable/pagament"
+            android:title="Pagament" />
+
+        <item
+            android:id="@+id/altres"
+            android:icon="@drawable/desplegable"
+            android:title="Altres">
+            <menu>
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/settings"
+                    android:title="Settings" />
+                <item
+                    android:id="@+id/nav_exit"
+                    android:icon="@drawable/exit"
+                    android:title="Exit" />
+            </menu>
+        </item>
+    </group>
+
+
+
+
+</menu>
