@@ -23,7 +23,7 @@
             android:id="@+id/textViewRestaurantName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Restaurant La Delícia"
+            android:text="Cafetería"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/imageViewLogo"
@@ -67,6 +67,7 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/menjarText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Menjars"
@@ -81,19 +82,26 @@
                 android:paddingBottom="8dp">
 
                 <TextView
+                    android:id="@+id/menjarName"
                     android:layout_height="wrap_content"
-                    android:text="Ensalada César"
                     android:textSize="16sp"
                     android:layout_weight="1"
                     android:layout_width="0px"/>
                 <TextView
+                    android:id="@+id/menjarQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8€"
+                    android:layout_marginRight="80dp"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/menjarPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:textSize="16sp"/>
             </LinearLayout>
 
             <TextView
+                android:id="@+id/begudaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Begudes"
@@ -109,19 +117,26 @@
                 android:paddingBottom="8dp">
 
                 <TextView
+                    android:id="@+id/begudaName"
                     android:layout_height="wrap_content"
-                    android:text="Coca-Cola"
                     android:textSize="16sp"
                     android:layout_weight="1"
                     android:layout_width="0px"/>
                 <TextView
+                    android:id="@+id/begudaQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3€"
+                    android:layout_marginRight="80dp"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/begudaPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:textSize="16sp"/>
             </LinearLayout>
 
             <TextView
+                android:id="@+id/postreText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Postres"
@@ -137,15 +152,22 @@
                 android:paddingBottom="8dp">
 
                 <TextView
+                    android:id="@+id/postreName"
                     android:layout_height="wrap_content"
-                    android:text="Tiramisu"
                     android:textSize="16sp"
                     android:layout_weight="1"
                     android:layout_width="0px"/>
                 <TextView
+                    android:id="@+id/postreQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5€"
+                    android:layout_marginRight="80dp"
+
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/postrePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:textSize="16sp"/>
             </LinearLayout>
 
@@ -162,15 +184,13 @@
             android:layout_marginTop="20dp"
             android:padding="16dp">
 
-
-
-
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp">
                 <TextView
+                    android:id="@+id/totalLabel"
                     android:layout_height="wrap_content"
                     android:text="Total"
                     android:textSize="20sp"
@@ -179,9 +199,9 @@
                     android:layout_width="0px"/>
 
                 <TextView
+                    android:id="@+id/totalPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="19.8€"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/holo_green_dark"/>

@@ -18,7 +18,7 @@ class UsersProvider {
             ),User(
                 user = "Albert",
                 password = "12345"
-            ),
+            )
         )
     }
 }

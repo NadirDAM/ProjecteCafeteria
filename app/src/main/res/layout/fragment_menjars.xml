@@ -18,18 +18,14 @@
             android:src="@drawable/menjars"
         />
 
-        <EditText
-            android:id="@+id/editTextBeguda"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spinnerMenjars"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="Beguda"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView"/>
 
         <EditText
             android:id="@+id/editTextQuantitatBeguda"
@@ -43,7 +39,7 @@
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextBeguda" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerMenjars" />
 
         <TextView
             android:id="@+id/textView"
@@ -53,7 +49,7 @@
             android:layout_marginEnd="100dp"
             android:hint="10€"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextBeguda" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerMenjars" />
 
         <Button
             android:id="@+id/button"

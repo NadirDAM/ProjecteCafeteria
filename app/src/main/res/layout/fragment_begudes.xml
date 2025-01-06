@@ -17,21 +17,17 @@
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/beguda" />
 
-        <EditText
-            android:id="@+id/editTextMenjars"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spinnerBegudes"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="Beguda"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView"/>
 
         <EditText
-            android:id="@+id/editTextQuantitatMenjars"
+            android:id="@+id/editTextQuantitatBegudes"
             android:layout_width="115dp"
             android:layout_height="43dp"
             android:layout_marginStart="100dp"
@@ -42,7 +38,7 @@
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextMenjars" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerBegudes" />
 
         <TextView
             android:id="@+id/textView"
@@ -52,7 +48,7 @@
             android:layout_marginEnd="100dp"
             android:hint="10€"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextMenjars" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerBegudes" />
 
         <Button
             android:id="@+id/button"
@@ -62,7 +58,7 @@
             android:text="@string/seg_ent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitatMenjars" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitatBegudes" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
