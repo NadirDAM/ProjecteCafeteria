@@ -32,11 +32,13 @@
         tools:layout="@layout/fragment_postres" >
         <action
             android:id="@+id/action_postresFragment_to_pagamentFragment"
-            app:destination="@id/pagamentFragment" />
+            app:destination="@id/pagamentFragment"
+            app:popUpTo="@id/menjarsFragment"/>
     </fragment>
     <fragment
         android:id="@+id/pagamentFragment"
         android:name="com.example.projectecafeteria.PagamentFragment"
         android:label="fragment_pagament"
-        tools:layout="@layout/fragment_pagament" />
+        tools:layout="@layout/fragment_pagament"
+        />
 </navigation>

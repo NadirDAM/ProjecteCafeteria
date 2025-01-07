@@ -10,11 +10,13 @@
 
         <ImageView
             android:id="@+id/imageViewLogo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:src="@drawable/pagament"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -83,16 +85,17 @@
 
                 <TextView
                     android:id="@+id/menjarName"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:layout_width="0px"/>
+                    android:layout_weight="1"/>
+
                 <TextView
                     android:id="@+id/menjarQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="80dp"
                     android:textSize="16sp"/>
+
                 <TextView
                     android:id="@+id/menjarPrice"
                     android:layout_width="wrap_content"
@@ -118,16 +121,17 @@
 
                 <TextView
                     android:id="@+id/begudaName"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:layout_width="0px"/>
+                    android:layout_weight="1"/>
+
                 <TextView
                     android:id="@+id/begudaQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="80dp"
                     android:textSize="16sp"/>
+
                 <TextView
                     android:id="@+id/begudaPrice"
                     android:layout_width="wrap_content"
@@ -153,17 +157,17 @@
 
                 <TextView
                     android:id="@+id/postreName"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:layout_width="0px"/>
+                    android:layout_weight="1"/>
+
                 <TextView
                     android:id="@+id/postreQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="80dp"
-
                     android:textSize="16sp"/>
+
                 <TextView
                     android:id="@+id/postrePrice"
                     android:layout_width="wrap_content"
@@ -189,6 +193,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp">
+
                 <TextView
                     android:id="@+id/totalLabel"
                     android:layout_height="wrap_content"
@@ -196,7 +201,7 @@
                     android:textSize="20sp"
                     android:layout_weight="1"
                     android:textStyle="bold"
-                    android:layout_width="0px"/>
+                    android:layout_width="0dp"/>
 
                 <TextView
                     android:id="@+id/totalPrice"

@@ -9,19 +9,24 @@
     tools:context=".RegisterActivity">
 
 
+
     <ImageView
         android:id="@+id/imageViewRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="396dp"
+        android:layout_height="343dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login"
+        app:srcCompat="@drawable/logo"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textFielUser"
         android:layout_width="233dp"
         android:layout_height="59dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="350dp"
         android:hint="@string/user"
         app:layout_constraintEnd_toEndOf="@+id/imageViewRegister"
         app:layout_constraintStart_toStartOf="@+id/imageViewRegister"
@@ -65,6 +70,7 @@
         android:layout_height="wrap_content"
         android:text="@string/register"
         android:layout_marginTop="80dp"
+        android:backgroundTint="@color/marron"
         app:layout_constraintEnd_toEndOf="@+id/textFielPassword"
         app:layout_constraintStart_toStartOf="@+id/textFielPassword"
         app:layout_constraintTop_toTopOf="@+id/textFielPassword"
@@ -79,6 +85,7 @@
         app:layout_constraintStart_toStartOf="@+id/outlinedButtonRegister"
         app:layout_constraintTop_toTopOf="@+id/outlinedButtonRegister"
         android:text="@string/anar_a_login"
+        android:textColor="@color/black"
         style="?attr/materialButtonOutlinedStyle"
         />
 
