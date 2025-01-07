@@ -17,7 +17,7 @@ class PostresFragment : Fragment() {
 
 
     private val sharedViewModel: SharedViewModel by activityViewModels()
-    private val viewModel: BegudesViewModel by viewModels()
+    private val viewModel: PostresViewModel by viewModels()
 
 
     override fun onCreateView(
