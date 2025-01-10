@@ -6,9 +6,6 @@ import androidx.lifecycle.ViewModel
 
 class BegudesViewModel : ViewModel() {
 
-    fun getSelectedItemPrice(position: Int): String {
-        val selectedItem = ProductesProvider.begudes[position]
-        return selectedItem.preu.toString() + "€"
-    }
+
 
 }

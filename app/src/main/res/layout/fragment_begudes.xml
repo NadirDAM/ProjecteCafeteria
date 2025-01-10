@@ -15,49 +15,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/beguda" />
+            android:src="@drawable/beguda"
+            />
 
-        <Spinner
-            android:id="@+id/spinnerBegudes"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView"/>
-
-        <EditText
-            android:id="@+id/editTextQuantitatBegudes"
-            android:layout_width="115dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:hint="Quantitat"
-            android:inputType="number"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerBegudes" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="81dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerBegudes" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:itemCount="5"
+            tools:layout_editor_absoluteX="0dp"
+            tools:listitem="@layout/card_view_design" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:text="@string/seg_ent"
+            android:backgroundTint="@color/marron"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitatBegudes" />
+            app:layout_constraintTop_toBottomOf="@+id/recyclerview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

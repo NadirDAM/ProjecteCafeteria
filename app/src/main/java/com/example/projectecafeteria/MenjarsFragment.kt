@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.projectecafeteria.databinding.FragmentMenjarsBinding
 import com.example.projectecafeteria.databinding.FragmentPostresBinding
 
@@ -26,32 +29,19 @@ class MenjarsFragment : Fragment() {
 
         val binding = FragmentMenjarsBinding.inflate(inflater)
 
+        binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
 
-        val menjarsNoms = ProductesProvider.menjars.map { it.nom }
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, menjarsNoms)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spinnerMenjars.adapter = adapter
-
-        binding.spinnerMenjars.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                val price = viewModel.getSelectedItemPrice(position)
-                binding.textView.text = price
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                binding.textView.text = "0€"
-            }
+        val adapter = CustomAdapter(ProductesProvider.menjars) { item, position ->
+            sharedViewModel.addOrUpdateMenjar(MenuModel(ProductesProvider.menjars[position].nom, 1,ProductesProvider.menjars[position].preu ))
+            Toast.makeText(requireContext(), "Producte: ${item.nom}, Preu: ${item.preu}", Toast.LENGTH_SHORT).show()
         }
+        binding.recyclerview.adapter = adapter
 
         binding.button.setOnClickListener {
-
-
-            if (binding.editTextQuantitatBeguda.text.isNotEmpty()) {
-                sharedViewModel.setMenjar(MenuModel(ProductesProvider.menjars[binding.spinnerMenjars.selectedItemPosition].nom, binding.editTextQuantitatBeguda.text.toString().toInt(),ProductesProvider.menjars[binding.spinnerMenjars.selectedItemPosition].preu ))
                 findNavController().navigate(R.id.action_menjarsFragment_to_begudesFragment, null)
-
-            }
         }
+
+
 
         return binding.root
     }

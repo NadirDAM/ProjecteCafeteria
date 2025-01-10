@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectecafeteria.databinding.FragmentPagamentBinding
 
 class PagamentFragment : Fragment() {
@@ -19,29 +21,43 @@ class PagamentFragment : Fragment() {
     ): View? {
         val binding = FragmentPagamentBinding.inflate(inflater)
 
-        sharedViewModel.menjar.observe(viewLifecycleOwner) { item ->
-            binding.menjarName.text = item.nom
-            binding.menjarQuantity.text = "x${item.quantitat}"
-            binding.menjarPrice.text = "${item.preu * item.quantitat}€"
+        binding.recyclerViewMenjars.layoutManager = LinearLayoutManager(requireContext())
+        val menjarAdapter = CustomAdapterMenu(sharedViewModel.menjarList.value ?: mutableListOf()) { item ->}
+        binding.recyclerViewMenjars.adapter = menjarAdapter
+
+        binding.recyclerViewBegudes.layoutManager = LinearLayoutManager(requireContext())
+        val begudaAdapter = CustomAdapterMenu(sharedViewModel.begudaList.value ?: mutableListOf()) { item -> }
+        binding.recyclerViewBegudes.adapter = begudaAdapter
+
+        binding.recyclerViewPostres.layoutManager = LinearLayoutManager(requireContext())
+        val postreAdapter = CustomAdapterMenu(sharedViewModel.postreList.value ?: mutableListOf()) { item -> }
+        binding.recyclerViewPostres.adapter = postreAdapter
+
+        sharedViewModel.menjarList.observe(viewLifecycleOwner) { list ->
+            if (list.isNotEmpty()) {
+                menjarAdapter.mList = list.toMutableList()
+                menjarAdapter.notifyDataSetChanged()
+            } else {
+            }
         }
 
-        sharedViewModel.beguda.observe(viewLifecycleOwner) { item ->
-            binding.begudaName.text = item.nom
-            binding.begudaQuantity.text = "x${item.quantitat}"
-            binding.begudaPrice.text = "${item.preu * item.quantitat}€"
+        sharedViewModel.begudaList.observe(viewLifecycleOwner) { list ->
+            if (list.isNotEmpty()) {
+                begudaAdapter.mList = list.toMutableList()
+                begudaAdapter.notifyDataSetChanged()
+            }
         }
 
-        sharedViewModel.postre.observe(viewLifecycleOwner) { item ->
-            binding.postreName.text = item.nom
-            binding.postreQuantity.text = "x${item.quantitat}"
-            binding.postrePrice.text = "${item.preu * item.quantitat}€"
+        sharedViewModel.postreList.observe(viewLifecycleOwner) { list ->
+            if (list.isNotEmpty()) {
+                postreAdapter.mList = list.toMutableList()
+                postreAdapter.notifyDataSetChanged()
+            }
         }
 
         sharedViewModel.total.observe(viewLifecycleOwner) { total ->
             binding.totalPrice.text = "$total€"
         }
-
-
 
         return binding.root
     }
